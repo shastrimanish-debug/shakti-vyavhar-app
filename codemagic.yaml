@@ -1,0 +1,33 @@
+workflows:
+  shakti-vyavhar-android:
+    name: SHAKTI VYAVHAR Android APK
+    max_build_duration: 30
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          set -e
+          flutter pub get
+          dart run flutter_launcher_icons
+
+      - name: Analyze project
+        script: |
+          set -e
+          flutter analyze --no-fatal-infos
+
+      - name: Run tests
+        script: |
+          set -e
+          flutter test
+
+      - name: Build Android APK
+        script: |
+          set -e
+          flutter build apk --release \
+            --dart-define=BHAVYA_LLM_URL="$BHAVYA_LLM_URL" \
+            --dart-define=BHAVYA_LLM_API_KEY="$BHAVYA_LLM_API_KEY" \
+            --dart-define=BHAVYA_LLM_MODEL="${BHAVYA_LLM_MODEL:-gpt-4o-mini}"
+
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk

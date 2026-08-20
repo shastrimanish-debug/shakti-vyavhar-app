@@ -1,0 +1,47 @@
+name: shakti_vyavhar
+description: Shakti Vyavhar - Advanced Digital Khata with AI Bhavya powered by SHIV SHAKTI
+publish_to: 'none'
+version: 2.0.0+13
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  sqflite: ^2.3.3+1
+  path_provider: ^2.1.3
+  path: ^1.9.0
+  google_fonts: ^6.3.3
+  intl: ^0.19.0
+  speech_to_text: ^7.0.0
+  flutter_tts: ^4.0.2
+  permission_handler: ^11.3.1
+  uuid: ^4.4.0
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.3.2
+  share_plus: ^10.1.4
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  file_picker: ^8.3.7
+  http: ^1.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/shakti_vyavhar_logo.jpg
+    - assets/shakti_vyavhar_icon.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/shakti_vyavhar_icon.png
+  adaptive_icon_background: '#102A43'
+  adaptive_icon_foreground: assets/shakti_vyavhar_icon.png
